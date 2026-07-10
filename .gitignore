@@ -1,0 +1,35 @@
+# ─── Environment & Secrets ──────────────────────────────────────────────────
+# NEVER commit real credentials. Copy .env.example → .env.local and fill in.
+.env
+.env.local
+.env*.local
+.env.production
+.env.development
+
+# ─── Next.js build ──────────────────────────────────────────────────────────
+.next/
+out/
+
+# ─── Dependencies ───────────────────────────────────────────────────────────
+node_modules/
+
+# ─── Test / scratch scripts ──────────────────────────────────────────────────
+test-*.js
+test-*.mjs
+
+# ─── v0 sandbox internal ────────────────────────────────────────────────────
+__v0_runtime_loader.js
+__v0_devtools.tsx
+__v0_jsx-dev-runtime.ts
+.snowflake/
+.v0-trash/
+
+# ─── Vercel deploy ──────────────────────────────────────────────────────────
+.vercel/
+
+# ─── OS ─────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ─── Context / personal notes ───────────────────────────────────────────────
+contexto.txt
