@@ -27,14 +27,24 @@ export async function evaluateOpportunities(): Promise<{ evaluated: number; inse
       result.evaluated++
       const newOpportunities: Partial<Opportunity>[] = []
 
+      // Group odds by market and selection, keeping only the best price (highest price) to prevent duplicate cards
+      const bestOdds = new Map<string, Odd>()
+      for (const odd of odds) {
+        const key = `${odd.market}|${odd.selection}`
+        const existing = bestOdds.get(key)
+        if (!existing || odd.price > existing.price) {
+          bestOdds.set(key, odd)
+        }
+      }
+
       // Calculate model probabilities
       const matchProbs = resultProbs(match)
       const over25Prob = overGoalsProb(match, 2.5)
       const over15Prob = overGoalsProb(match, 1.5)
       const bttsYesProb = bttsProb(match)
 
-      // Compare model against bookmaker odds
-      for (const odd of odds) {
+      // Compare model against best bookmaker odds
+      for (const odd of bestOdds.values()) {
         let modelProb = 0
         let category = "match"
         
