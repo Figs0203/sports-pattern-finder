@@ -1,4 +1,4 @@
-# 🔍 Sports Pattern Finder
+# Sports Pattern Finder
 
 A statistical sports betting analysis tool that identifies **value betting opportunities** by comparing mathematical probability models against bookmaker odds — with no AI or LLM involved, only pure statistics.
 
@@ -6,7 +6,7 @@ Built with **Next.js 15**, **Supabase**, and data from **API-Football** and **Th
 
 ---
 
-## ✨ Features
+## Features
 
 - **Dashboard** — Live and upcoming matches with detected opportunities and top patterns at a glance.
 - **Pattern Discovery** — Statistically significant patterns detected from historical opportunity data (z-score based, no AI).
@@ -18,7 +18,7 @@ Built with **Next.js 15**, **Supabase**, and data from **API-Football** and **Th
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 API-Football ──┐
@@ -45,7 +45,7 @@ The Odds API ──┘   (ingestion)    (lib/engine.ts)      (database)
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -83,9 +83,9 @@ THE_ODDS_API_KEY=your-key
 In your Supabase project, open the **SQL Editor** and run these scripts in order:
 
 ```
-supabase/schema.sql        ← Creates all tables
-supabase/permissions.sql   ← Grants anon/service_role access
-supabase/rls_policies.sql  ← Row Level Security read policies
+supabase/schema.sql        <- Creates all tables
+supabase/permissions.sql   <- Grants anon/service_role access
+supabase/rls_policies.sql  <- Row Level Security read policies
 ```
 
 ### 4. Run locally
@@ -108,7 +108,7 @@ This will fetch fixtures and odds from all configured leagues and run the evalua
 
 ---
 
-## ☁️ Deploy to Vercel
+## Deploy to Vercel
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Figs0203/sports-pattern-finder)
 
@@ -118,29 +118,29 @@ This will fetch fixtures and odds from all configured leagues and run the evalua
 
 ---
 
-## 📊 Supported Leagues (The Odds API)
+## Supported Leagues (The Odds API)
 
 | Competition | Status |
 |---|---|
-| 🌍 FIFA World Cup 2026 | ✅ Active |
-| 🏆 Copa Libertadores | ✅ Active |
-| 🏆 Copa Sudamericana | ✅ Active |
-| 🇧🇷 Brasileirao Série A & B | ✅ Active |
-| 🇦🇷 Liga Argentina | ✅ Active |
-| 🇺🇸 MLS | ✅ Active |
-| 🇲🇽 Liga MX | ✅ Active |
-| 🇬🇧 EPL / Championship | Seasonal (Aug–Jun) |
-| 🇪🇸 La Liga | Seasonal (Aug–Jun) |
-| 🇩🇪 Bundesliga | Seasonal (Aug–Jun) |
-| 🇮🇹 Serie A | Seasonal (Aug–Jun) |
-| 🇫🇷 Ligue 1 | Seasonal (Aug–Jun) |
-| 🏅 UEFA CL Qualification | Seasonal |
+| FIFA World Cup 2026 | Active |
+| Copa Libertadores | Active |
+| Copa Sudamericana | Active |
+| Brasileirao Serie A & B | Active |
+| Liga Argentina | Active |
+| MLS | Active |
+| Liga MX | Active |
+| EPL / Championship | Seasonal (Aug-Jun) |
+| La Liga | Seasonal (Aug-Jun) |
+| Bundesliga | Seasonal (Aug-Jun) |
+| Serie A | Seasonal (Aug-Jun) |
+| Ligue 1 | Seasonal (Aug-Jun) |
+| UEFA CL Qualification | Seasonal |
 
 To add or remove leagues, edit the `ACTIVE_LEAGUES` array in `app/api/sync/route.ts`.
 
 ---
 
-## 🔒 Security Notes
+## Security Notes
 
 - **Never commit `.env.local`** — it is excluded by `.gitignore`.
 - The `/api/sync` endpoint is open by default. To protect it, add a `SYNC_SECRET` env variable and pass `Authorization: Bearer <secret>` in the request header.
@@ -148,7 +148,7 @@ To add or remove leagues, edit the `ACTIVE_LEAGUES` array in `app/api/sync/route
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework:** Next.js 15 (App Router, Server Components)
 - **Database:** Supabase (PostgreSQL)
@@ -160,6 +160,6 @@ To add or remove leagues, edit the `ACTIVE_LEAGUES` array in `app/api/sync/route
 
 ---
 
-## 📄 License
+## License
 
 MIT
